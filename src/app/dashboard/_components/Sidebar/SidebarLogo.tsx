@@ -1,0 +1,18 @@
+import Link from "next/link"
+
+function SidebarLogo() {
+  return (
+    <Link href="/dashboard" className="flex items-center align-center p-4">
+      <div className="flex items-center space-x-2">
+        <div className="bg-[#030303] p-1.5 rounded-md fill-white">
+          <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M464 256a208 208 0 11-416 0 208 208 0 11416 0zM0 256a256 256 0 10512 0 256 256 0 10-512 0zm232-136v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path>
+          </svg>
+        </div>
+        <span className="text-white font-bold text-lg">Clocklance</span>
+      </div>
+    </Link>
+  )
+}
+
+export default SidebarLogo

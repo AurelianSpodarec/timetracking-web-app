@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContextProvider from '@/context'
+import { cabinSketch } from "@/lib/fonts";
 
 import './../styles/styles.scss'
 
@@ -15,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className={`${cabinSketch.variable}`}>
         <ContextProvider>
           {children}
         </ContextProvider>

@@ -39,32 +39,32 @@ export const theming = plugin(
         '--radius': '0.5rem',
 
         // =============================================================
-        // Main Components
+        // Dashboard Components
         // ============================================================= 
 
         // Header
         // -------------------------------------------------------------
-        "--header-background": "white",
+        "--header-background": "#333",
         "--header-foreground": "black",
         "--header-border-bottom": "green",
 
-
         // Sidebar
         // -------------------------------------------------------------
-        "--sidebar-background": "#fff",
+        "--sidebar-background": "#333",
         "--sidebar-foreground": "",
 
-        "--sidebar-link-foreground": "",
+        "--sidebar-link-foreground": "#fff",
         "--sidebar-link-foreground-hover": "",
         "--sidebar-link-foreground-active": "#fff",
         "--sidebar-link-foreground-active-hover": "#fff",
         "--sidebar-link-foreground-disabled": "",
 
-        "--sidebar-link-background": "#fff",
+        "--sidebar-link-background": "",
         "--sidebar-link-background-hover": "#f4f4f5",
         "--sidebar-link-background-active": "#18181b",
         "--sidebar-link-background-active-hover": "#2f2f31",
         "--sidebar-link-background-disabled": "",
+
         // Main
         // ------------------------------------------------------------
       },
@@ -164,38 +164,33 @@ export const theming = plugin(
           background: 'var(--background)',
 
           // =============================================================
-          // Main Components
+          // Section: Dashboard
           // ============================================================= 
-          header: {
-            background: 'var(--header-background)',
-            foreground: 'var(--header-foreground)',
-            "border-bottom": 'var(--header-border-bottom)',
+          dashboard: {
+            header: {
+              background: 'var(--header-background)',
+              foreground: 'var(--header-foreground)',
+              "border-bottom": 'var(--header-border-bottom)',
+            },
+            sidebar: {
+              background: 'var(--sidebar-background)',
+              foreground: 'var(--sidebar-foreground)',
+
+              // Links
+              //---------------
+              "link-foreground": "var(--sidebar-link-foreground)",
+              "link-foreground-hover": "var(--sidebar-link-foreground-hover)",
+              "link-foreground-active": "var(--sidebar-link-foreground-active)",
+              "link-foreground-active-hover": "var(--sidebar-link-foreground-active-hover)",
+              "link-foreground-disabled": "var(--sidebar-link-foreground-disabled)",
+
+              "link-background": "var(--sidebar-link-background)",
+              "link-background-hover": "var(--sidebar-link-background-hover)",
+              "link-background-active": "var(--sidebar-link-background-active)",
+              "link-background-active-hover": "var(--sidebar-link-background-active-hover)",
+              "link-background-disabled": "var(--sidebar-link-background-disabled)",
+            },
           },
-          sidebar: {
-            background: 'var(--sidebar-background)',
-            foreground: 'var(--sidebar-foreground)',
-
-            // Links
-            //---------------
-            "link-foreground": "var(--sidebar-link-foreground)",
-            "link-foreground-hover": "var(--sidebar-link-foreground-hover)",
-            "link-foreground-active": "var(--sidebar-link-foreground-active)",
-            "link-foreground-active-hover": "var(--sidebar-link-foreground-active-hover)",
-            "link-foreground-disabled": "var(--sidebar-link-foreground-disabled)",
-
-            "link-background": "var(--sidebar-link-background)",
-            "link-background-hover": "var(--sidebar-link-background-hover)",
-            "link-background-active": "var(--sidebar-link-background-active)",
-            "link-background-active-hover": "var(--sidebar-link-background-active-hover)",
-            "link-background-disabled": "var(--sidebar-link-background-disabled)",
-          },
-          // main: {
-
-          // },
-          // sidebar: {
-
-          // },
-
 
           // =============================================================
           // Components

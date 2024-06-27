@@ -1,11 +1,19 @@
-import { auth } from "@/auth";
+import { dashboardSettings } from "@/config/settings";
 
-async function DashboardLayout() {
-  const session = await auth()
-  console.log("dashboard layout", session)
+import Sidebar from "./_components/Sidebar";
+import SidebarHeader from "./_components/Header";
+import SidebarMain from "./_components/Main";
+
+async function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
-      DashboardLayout ID: {session?.user?.email}
+    <div className="flex w-full h-full">
+      <Sidebar settings={dashboardSettings.sidebar} />
+      <div className="w-full">
+        <SidebarHeader />
+        <SidebarMain>
+          {children}
+        </SidebarMain>
+      </div>
     </div>
   );
 }
