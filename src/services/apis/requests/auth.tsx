@@ -2,7 +2,7 @@
 // API Auth
 // ============================================================
 
-import FetchZiti from '../fetch/FetchClocklance'
+import FetchClocklance from '../fetch/FetchClocklance'
 
 export interface IAuthLogin {
   email: string
@@ -13,5 +13,5 @@ export interface IAuthLogin {
 // ===========================================
 
 export async function authLogin (data: IAuthLogin) {
-  return await FetchZiti('login', 'POST', data)
+  return await FetchClocklance('login', 'POST', data)
 }

@@ -1,10 +1,10 @@
 // ============================================================
 // API User
 // ============================================================
-import FetchZiti from "../fetch/FetchClocklance"
+import FetchClocklance from "../fetch/FetchClocklance"
 
 // User
 // ============================================================
 export async function getUserprofile (bearerToekn: string) {
-  return await FetchZiti('users/profile', 'GET', undefined, undefined, bearerToekn)
+  return await FetchClocklance('users/profile', 'GET', undefined, undefined, bearerToekn)
 }
