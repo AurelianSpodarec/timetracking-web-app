@@ -4,8 +4,9 @@
 
 import FetchZiti from '../fetch/FetchClocklance'
 
-interface IAuthLogin {
-
+export interface IAuthLogin {
+  email: string
+  password: string
 }
 
 // Login

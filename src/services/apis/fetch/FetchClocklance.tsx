@@ -14,7 +14,6 @@ async function FetchClocklance<T> (
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
     Accept: 'application/json',
-    Origin: 'ziti'
   }
 
   if (refreshToken) {
@@ -27,9 +26,8 @@ async function FetchClocklance<T> (
 
   const response = await fetch(`${config.API_URL}/${endpoint}`, {
     method,
-    credentials: 'include',
     headers,
-    body: method !== 'GET' ? JSON.stringify(data) : undefined
+    body: method === 'GET' ? undefined : JSON.stringify(data)
   })
 
   const content = await getResponseContent(response) as T
