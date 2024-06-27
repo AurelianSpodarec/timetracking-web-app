@@ -15,7 +15,6 @@ export default auth((req: NextRequest) => {
   }
 
   if (isAuthRoute) {
-    console.log("ye")
       if (isLoggedIn) {
         return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
       }
@@ -23,7 +22,6 @@ export default auth((req: NextRequest) => {
   }
   
   if (!isLoggedIn && !isPublicRoute) {
-    console.log("woops")
     return Response.redirect(new URL("/login", nextUrl))
   }
 

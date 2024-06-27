@@ -15,11 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <ContextProvider>
-        <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
+        <ContextProvider>
           {children}
-        </body>
-      </ContextProvider>
-    </html>
+        </ContextProvider>
+      </body>
+    </html >
   );
 }
