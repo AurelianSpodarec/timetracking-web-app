@@ -4,6 +4,14 @@ export const theming = plugin(
   function ({ addBase, theme }) {
     addBase({
       ':root': {
+
+
+        // Border Radius
+        '--border-sketchy-1': "555px 25px 25px 25px / 25px 25px 25px 555px",
+        '--border-sketchy-2': "255px 25px 225px 25px / 25px 225px 25px 255px",
+        '--border-sketchy-3': "55px 225px 15px 25px / 25px 25px 35px 355px",
+
+
         // =============================================================
         // Named Colors
         // =============================================================
@@ -178,6 +186,8 @@ export const theming = plugin(
 
               // Links
               //---------------
+              
+              
               "link-foreground": "var(--sidebar-link-foreground)",
               "link-foreground-hover": "var(--sidebar-link-foreground-hover)",
               "link-foreground-active": "var(--sidebar-link-foreground-active)",
@@ -203,6 +213,10 @@ export const theming = plugin(
             DEFAULT: 'var(--card)',
             foreground: 'var(--card-foreground)'
           }
+        },
+        borderRadius: {
+          "dashboard-sidebar-link-border-radius": "var(--border-sketchy-1)",
+          "dashboard-sidebar-dropdown-menu": "var(--border-sketchy-1)"
         },
         // Animation
         // =================================================

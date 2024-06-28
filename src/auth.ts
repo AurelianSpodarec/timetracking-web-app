@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import { IAuthLogin, authLogin } from "./services/apis/requests/auth"
+import { IAuthLogin, authLogin } from "./services/apis/endpoints/auth"
 
 interface IUserData {
   avatar: string;

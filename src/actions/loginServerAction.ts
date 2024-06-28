@@ -3,7 +3,7 @@
 import { AuthError } from 'next-auth'
 import { signIn } from '@/auth'
 
-import { IAuthLogin } from '@/services/apis/requests/auth'
+import { IAuthLogin } from '@/services/apis/endpoints/auth'
 import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
 
 export async function serverLogin (values:IAuthLogin) {
