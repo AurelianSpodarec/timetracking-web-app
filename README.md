@@ -33,8 +33,8 @@ The Services module handles API interactions. It is organized into two main fold
 ##### `apis`
 
 Each API folder includes two subfolders:
-- `fetch`: Implements the fetch functionality, configured specifically for the API.
 - `endpoints`: Defines the endpoints for the API.
+- `fetch`: Implements the fetch functionality, configured specifically for the API.
 
 ##### `requests`
 
@@ -48,11 +48,11 @@ To support multiple APIs, create a new folder for each API inside the `apis` fol
 ```
 apis/
     Clocklance/
-        fetch/
         endpoints/
+        fetch/
     Google/
-        fetch/
         endpoints/
+        fetch/
 ```
 
 Each new API folder should follow the same structure with `fetch` and `endpoints` subfolders.
@@ -69,14 +69,11 @@ Our components follow the Atomic Design principles.
 - **Templates**: Complete page layouts or reusable sections.
 - **UI**: ShadCN/UI components used as functionality only; this components should be never used directly but instead a wrapper should be built around and styling should be extracted. 
 
-
 #### Usage Guidelines
 
 Components used universally across the app reside in the global components directory. 
 
 However, components specific to a single page, like the main Header or Footer, are placed directly in the page's root directory in a `_components` folder to avoid cluttering the global components folder.
-
-### Further Learning
 
 For more details on Atomic Design principles, refer to [Brad Frost's Blog](https://atomicdesign.bradfrost.com/chapter-2/), the founder of this methodology.
 
