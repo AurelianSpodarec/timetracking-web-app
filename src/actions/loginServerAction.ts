@@ -1,7 +1,7 @@
 'use server'
 
 import { AuthError } from 'next-auth'
-import { signIn } from '@/auth'
+import { signIn, signOut } from '@/auth'
 
 import { IAuthLogin } from '@/services/apis/endpoints/auth'
 import { DEFAULT_LOGIN_REDIRECT } from '@/routes'
@@ -27,5 +27,8 @@ export async function serverLogin (values:IAuthLogin) {
 
     throw error
   }
+}
 
+export async function serverLogout() {
+  await signOut()
 }

@@ -1,5 +1,5 @@
-import { IDashboardSidebarSettings } from "@/config/IDashboardSettings"
 import Link from "next/link"
+import { IDashboardSidebarSettings } from "@/config/dashboard"
 
 export interface INavigationItem {
   id: string
@@ -16,7 +16,7 @@ function SidebarNavigationItem({ prefix, item, isActive }: { item: INavigationIt
   const hasChildren = item.children
   const hasPrefix = prefix
 
-  const itemSlug = `${hasPrefix}/${item.slug}`
+  const itemSlug = `${hasPrefix}${item.slug}`
 
   const Comp = hasChildren ? 'div' : Link;
   const linkProps = !hasChildren && item.slug && { href: itemSlug };

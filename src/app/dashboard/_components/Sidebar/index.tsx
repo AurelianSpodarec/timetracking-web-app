@@ -1,4 +1,5 @@
-import { IDashboardSidebarSettings } from "@/config/IDashboardSettings"
+import { IDashboardSidebarSettings } from "@/config/dashboard"
+
 import SidebarNavigation from "./SidebarNavigation"
 import SidebarLogo from "./SidebarLogo"
 

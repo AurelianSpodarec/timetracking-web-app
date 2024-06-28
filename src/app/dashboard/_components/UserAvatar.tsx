@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 
 import {
   DropdownMenuDefault,
@@ -7,52 +9,39 @@ import {
   DropdownMenuDefaultSeparator,
   DropdownMenuDefaultTrigger,
 } from "@/components/molecules/dropdown-menu"
-import Image from "next/image";
 
-const userMenu = [
-  {
-    name: "Links",
-    displayUI: false,
-    group: [
-      {
-        name: "Profile",
-        slug: "/profile"
-      },
-      {
-        name: "Profile",
-        slug: "/profile"
-      },
-      {
-        name: "Profile",
-        slug: "/profile"
-      }
-    ]
-  },
-  {
-    name: "Logout",
-    onAction: "() => logout()"
-  }
-]
-
-function UserAvatar({ email, avatar }) {
+function UserAvatar({ menu, email, avatar }) {
   return (
     <div>
       <DropdownMenuDefault>
         <DropdownMenuDefaultTrigger>
-          <div className="flex items-center align-center space-x-2">
-            <span className="text-white no-">{email}</span>
+          <div className="flex items-center space-x-2">
+            <span className="text-white">{email}</span>
             <Image src={avatar} alt={email} width={30} height={30} className="rounded" />
           </div>
         </DropdownMenuDefaultTrigger>
+
         <DropdownMenuDefaultContent>
-          <DropdownMenuDefaultLabel>My Account</DropdownMenuDefaultLabel>
-          <DropdownMenuDefaultSeparator />
-          <DropdownMenuDefaultItem>Profile</DropdownMenuDefaultItem>
-          <DropdownMenuDefaultItem>Billing</DropdownMenuDefaultItem>
-          <DropdownMenuDefaultItem>Team</DropdownMenuDefaultItem>
-          <DropdownMenuDefaultItem>Subscription</DropdownMenuDefaultItem>
-          <DropdownMenuDefaultSeparator />
-          <DropdownMenuDefaultItem>Logout</DropdownMenuDefaultItem>
+          {menu.map((menuItem, index) => (
+            <React.Fragment key={index}>
+              {menuItem.group ? (
+                <>
+                  <DropdownMenuDefaultLabel>{menuItem.name}</DropdownMenuDefaultLabel>
+                  <DropdownMenuDefaultSeparator />
+                  {menuItem.group.map((groupItem, idx) => (
+                    <DropdownMenuDefaultItem key={idx} onClick={groupItem.onAction}>
+                      {groupItem.name}
+                    </DropdownMenuDefaultItem>
+                  ))}
+                  <DropdownMenuDefaultSeparator />
+                </>
+              ) : (
+                <DropdownMenuDefaultItem onClick={menuItem.onAction}>
+                  {menuItem.name}
+                </DropdownMenuDefaultItem>
+              )}
+            </React.Fragment>
+          ))}
         </DropdownMenuDefaultContent>
       </DropdownMenuDefault>
     </div>

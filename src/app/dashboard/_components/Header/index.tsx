@@ -1,6 +1,32 @@
 import ModeToggle from "@/components/ModeToggle"
 import UserAvatar from "../UserAvatar"
 import { auth } from "@/auth"
+import { serverLogout } from "@/actions/loginServerAction"
+
+const userMenu = [
+  {
+    name: "My Account",
+    displayUI: false,
+    group: [
+      {
+        name: "Profile",
+        slug: "/profile"
+      },
+      {
+        name: "Billing",
+        slug: "/billing"
+      },
+      {
+        name: "Subscription",
+        slug: "/subscription"
+      }
+    ]
+  },
+  {
+    name: "Logout",
+    onAction: async () => await serverLogout()
+  }
+]
 
 async function SidebarHeader() {
   const session = await auth()
@@ -13,7 +39,7 @@ async function SidebarHeader() {
         
         <ModeToggle />
         <div className="ml-auto">
-          <UserAvatar email={session?.user?.email} avatar={session?.user?.avatar} />
+          <UserAvatar menu={userMenu} email={session?.user?.email} avatar={session?.user?.avatar} />
         </div>
       </div>
     </header>

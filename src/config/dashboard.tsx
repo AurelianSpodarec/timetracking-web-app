@@ -1,12 +1,18 @@
-import { IDashboardSidebarSettings } from "./IDashboardSettings"
+import { DASHBOARD_URL } from "./constants"
+import { INavigationItem } from "@/app/dashboard/_components/Sidebar/SidebarNavigation"
+
+export interface IDashboardSidebarSettings {
+  prefix: string
+  menu: INavigationItem[]
+}
 
 const dashboardSettings: IDashboardSidebarSettings = {
-  prefix: "/dashboard",
+  prefix: DASHBOARD_URL,
   menu: [
     {
       id: "general",
       name: "General",
-      slug: "general",
+      slug: "/general",
       new: false,
       icon: <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +26,7 @@ const dashboardSettings: IDashboardSidebarSettings = {
     {
       id: "charts",
       name: "Charts",
-      slug: "charts",
+      slug: "/charts",
       new: true,
       icon: <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +40,7 @@ const dashboardSettings: IDashboardSidebarSettings = {
     {
       id: "tables",
       name: "Tables",
-      slug: "tables",
+      slug: "/tables",
       new: false,
       icon: <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +54,7 @@ const dashboardSettings: IDashboardSidebarSettings = {
     {
       id: "components",
       name: "Components",
-      slug: "components",
+      slug: "/components",
       new: false,
       icon: <svg
         fill="currentColor"
