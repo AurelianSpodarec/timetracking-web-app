@@ -16,7 +16,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Generate AuthJS Secret
 
-To generate secret: `npx auth secret`
+To generate secret: `npx auth secret` 
+
+Place the generates value inside the `.env` file
 
 AuthJS Docs: [https://authjs.dev/reference/core/errors#missingsecret](https://authjs.dev/reference/core/errors#missingsecret)
 
