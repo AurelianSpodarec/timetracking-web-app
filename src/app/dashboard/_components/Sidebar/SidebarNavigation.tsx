@@ -1,5 +1,8 @@
+'use client'
+
 import Link from "next/link"
 import { IDashboardSidebarSettings } from "@/config/dashboard"
+import { usePathname, useRouter } from "next/navigation"
 
 export interface INavigationItem {
   id: string
@@ -57,10 +60,12 @@ function SidebarNavigationItemChildren({ children }: { children: INavigationItem
 }
 
 function SidebarNavigation({ settings }: { settings: IDashboardSidebarSettings }) {
+  const pathname = usePathname()
   return (
     <nav className="flex-1 overflow-auto px-3">
-      {settings.menu.map((item: any, index: number) => {
-        const isActive = index === 0
+      {settings.menu.map((item: any) => {
+        const itemSlug = settings.prefix + item.slug
+        const isActive = pathname === itemSlug || pathname.startsWith(`${itemSlug}/`)
         return <SidebarNavigationItem key={item.id} item={item} isActive={isActive} prefix={settings.prefix} />
       })}
     </nav>
