@@ -6,5 +6,5 @@ import animatePlugin from 'tailwindcss-animate'
 export const preset = {
   darkMode: ['class'],
   content: [],
-  plugins: [theming, animatePlugin]
+  plugins: [theming, animatePlugin],
 } satisfies Config
