@@ -1,153 +1,73 @@
 import { cva } from 'class-variance-authority'
 
-// Needs to be dynamic
+// Notes
+// So, CVA is a bit shit...
+
+// Making button variants in CSS is easy peasy... this doesn't let you gorup stuff by kind, or anything at all...
+// Let's give this a proper try.
+
+// Variants will contain the colors, in this case
+// Solid will have the primary colors, for BOTH, background, AND border, however...
+// Outline will have the background transparent, 
+
+// Note: Template literals should beused for quotes, that is because otherwise you wont be able to break the class
 const buttonVariants = cva(
-  'inline-flex items-center duration-75 justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  `rounded-button-border-radius`,
   {
     variants: {
       variant: {
-        default: 'bg-white text-text shadow-button border border-gray-400',
-        primary: 'bg-primary text-white hover:bg-primary/90',
-
+        primary: '',
         secondary: '',
-
-        // To be deleted below
-        warning: 'bg-red-500 text-primary-foreground',
-        destructive: 'bg-destructive text-white',
-        monochrome: 'bg-black text-white border border-gray-900',
-        clean: 'bg-blackBlue-800'
       },
       kind: {
-        plain: 'shadow-none bg-transparent border border-current px-2 py-1 text-sm',
         solid: '',
-        outline: 'bg-transparent border border-current shadow-[0_0_0_1px_currentColor]',
-        ghost: '',
-        ring: '',
-        glass: 'backdrop-blur-sm bg-opacity-60'
+        outline: 'bg-transparent',
+        glass: 'border-transparent backdrop-blur-sm bg-opacity-60',
       },
-      size: {
-        slim: 'text-sm',
-        medium: 'text-sm',
-        large: 'text-base'
-      },
-      fullWidth: {
-        true: 'w-full'
-      },
-      spacing: {
-        clean: ''
-      }
-      // disabled: {
-      //   true: "bg-surfaceDisabled text-textDisabled",
-      // },
     },
     compoundVariants: [
       // ======================================
       // Primary
       // ======================================
+      //  bg-button-primary-bg hover:bg-button-primary-bg-hover bg-button-primary-foreground hover:bg-button-primary-foreground-hover'
       {
-        kind: 'outline',
         variant: 'primary',
-        className: 'text-primary'
+        kind: 'solid',
+        className: `bg-button-primary hover:bg-button-primary/50
+                    border border-button-primary
+                    `
       },
       {
-        kind: 'plain',
         variant: 'primary',
-        className: 'text-primary'
+        kind: 'outline',
+        className: 'border border-button-primary'
       },
       // ======================================
-      // Monochrome
+      // Secondary
       // ======================================
       {
+        variant: 'secondary',
         kind: 'solid',
-        size: 'medium',
-        variant: 'monochrome',
-        className: 'hover:bg-[#262626]'
+        className: 'bg-button-secondary border border-button-secondary'
       },
       {
+        variant: 'secondary',
         kind: 'outline',
-        size: 'medium',
-        variant: 'monochrome',
-        className: 'border border-black text-black hover:bg-gray-100'
+        className: 'border border-button-secondary'
       },
       // ======================================
-      // Other
+      // Glass
       // ======================================
+      // White/black
       {
-        kind: 'outline',
-        variant: 'destructive',
-        className: 'text-destructive'
-      },
-      {
-        kind: 'outline',
-        variant: 'warning',
-        className: 'text-red-500'
-      },
-      {
-        kind: 'outline',
-        size: 'slim',
-        className: 'px-3 py-[3px]'
-      },
-      // Button Kind
-      // ========================================
-      {
-        kind: 'outline',
-        size: 'medium',
-        className: 'px-5 py-3'
-      },
-      {
-        kind: 'solid',
-        size: 'medium',
-        className: 'px-5 py-3'
-      },
-      {
-        kind: 'outline',
-        size: 'large',
-        className: 'px-5 py-3'
-      },
-      // Button Kind: Solid
-      // ======================================
-      {
-        kind: 'solid',
-        size: 'slim',
-        className: 'px-3 py-[3px]'
-      },
-      {
-        kind: 'solid',
-        size: 'large',
-        className: 'px-5 py-3'
-      },
-      // ======================================
-      // Button Kind: Plain
-      // ======================================
-      {
-        kind: 'plain',
-        variant: 'destructive',
-        className: 'text-destructive'
-      },
-      // {
-      //   disabled: true,
-      //   variant: "default",
-      //   className: "border-borderDisabled",
-      // },
-      // ======================================
-      // Button Kind: Glass
-      // ======================================
-      {
+        variant: 'primary',
         kind: 'glass',
-        size: 'medium',
-        className: 'px-3 py-3'
-        // variant: "",
+        className: 'bg-green-500'
       },
-      {
-        kind: 'glass',
-        size: 'medium',
-        className: 'px-3 py-3',
-        variant: 'clean'
-      }
     ],
     defaultVariants: {
-      variant: 'monochrome',
-      size: 'medium'
+      // variant: 'monochrome',
+      // size: 'medium'
     }
   }
 )

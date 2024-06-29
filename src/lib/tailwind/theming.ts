@@ -11,6 +11,39 @@ export const theming = plugin(
         '--border-sketchy-2': "255px 25px 225px 25px / 25px 225px 25px 255px",
         '--border-sketchy-3': "55px 225px 15px 25px / 25px 25px 35px 355px",
 
+        // =============================================================
+        // Button
+        // =============================================================
+        '--button-primary': "blue",
+        '--button-secondary': "red",
+        '--button-border-radius': "var(--border-sketchy-1)",
+
+        // PRIMARY
+        // ===================================================
+
+        // Solid
+        // --------------------------------------------
+        '--button-primary-solid': "",
+        '--button-primary-solid-hover': "",
+        '--button-primary-solid-border': "",
+
+        // Outline
+        // --------------------------------------------
+        '--button-primary-outline': "",
+        '--button-primary-outline-hover': "",
+        '--button-primary-outline-border': "",
+
+        // Secondary
+        // ===================================================
+
+        // Solid
+        // --------------------------------------------
+
+        // Outline
+        // --------------------------------------------
+
+
+
 
         // =============================================================
         // Named Colors
@@ -205,6 +238,17 @@ export const theming = plugin(
           // =============================================================
           // Components
           // ============================================================= 
+
+          // BUTTON
+          // --------------------------------------------------------
+          button: {
+            primary: "var(--button-primary)",
+            secondary: "var(--button-secondary)",
+          },
+          
+          
+          // Other
+          // --------------------------------------------------------
           popover: {
             DEFAULT: 'var(--popover)',
             foreground: 'var(--popover-foreground)'
@@ -215,6 +259,7 @@ export const theming = plugin(
           }
         },
         borderRadius: {
+          "button-border-radius": "var(--button-border-radius)",
           "dashboard-sidebar-link-border-radius": "var(--border-sketchy-1)",
           "dashboard-sidebar-dropdown-menu": "var(--border-sketchy-1)"
         },

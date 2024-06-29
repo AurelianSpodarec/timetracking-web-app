@@ -39,12 +39,12 @@ export function DropdownMenuDefaultSeparator() {
 
 export function DropdownMenuDefaultLabel({ children }: { children: React.ReactNode }) {
   return (
-    <DropdownMenuLabel>{children}</DropdownMenuLabel>
+    <DropdownMenuLabel >{children}</DropdownMenuLabel>
   )
 }
 
-export function DropdownMenuDefaultItem({ children }: { children: React.ReactNode }) {
+export function DropdownMenuDefaultItem({ children, props }: { children: React.ReactNode }) {
   return (
-    <DropdownMenuItem className="hover:bg-black hover:text-white rounded-dashboard-sidebar-link-border-radius">{children}</DropdownMenuItem>
+    <DropdownMenuItem {...props} className="hover:bg-black hover:text-white rounded-dashboard-sidebar-link-border-radius">{children}</DropdownMenuItem>
   )
 }

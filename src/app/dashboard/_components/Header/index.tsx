@@ -30,7 +30,6 @@ const userMenu = [
 
 async function SidebarHeader() {
   const session = await auth()
-
   console.log(session.user)
 
   return (
