@@ -6,14 +6,19 @@ export const theming = plugin(
     addBase({
       ':root': {
 
-
+        // =============================================================
         // Border Radius
+        // =============================================================
         '--border-sketchy-1': "555px 25px 25px 25px / 25px 25px 25px 555px",
         '--border-sketchy-2': "255px 25px 225px 25px / 25px 225px 25px 255px",
         '--border-sketchy-3': "55px 225px 15px 25px / 25px 25px 35px 355px",
 
         // =============================================================
-        // Button
+        // COMPONENTS
+        // =============================================================
+        
+        // =============================================================
+        // Component: Button
         // =============================================================
         '--button-primary': "blue",
         '--button-secondary': "red",
@@ -24,13 +29,11 @@ export const theming = plugin(
 
         // Solid
         // --------------------------------------------
-        '--button-primary-solid': "",
         '--button-primary-solid-hover': "",
         '--button-primary-solid-border': "",
 
         // Outline
         // --------------------------------------------
-        '--button-primary-outline': "",
         '--button-primary-outline-hover': "",
         '--button-primary-outline-border': "",
 
@@ -42,7 +45,7 @@ export const theming = plugin(
 
         // Outline
         // --------------------------------------------
-
+        
 
 
 

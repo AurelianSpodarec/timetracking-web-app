@@ -1,16 +1,12 @@
 import { cva } from 'class-variance-authority'
 
-// Notes
-// So, CVA is a bit shit...
+/**
+* @description CVA provides limited grouping functionality. Please adhere to the specified structure.
+* @note Ensure the use of template literals for quoting to facilitate class line breaking for proper organization.
+* 
+*  The first line of CVA globally affects all the buttons
+*/
 
-// Making button variants in CSS is easy peasy... this doesn't let you gorup stuff by kind, or anything at all...
-// Let's give this a proper try.
-
-// Variants will contain the colors, in this case
-// Solid will have the primary colors, for BOTH, background, AND border, however...
-// Outline will have the background transparent, 
-
-// Note: Template literals should beused for quotes, that is because otherwise you wont be able to break the class
 const buttonVariants = cva(
   `rounded-button-border-radius`,
   {
@@ -29,7 +25,6 @@ const buttonVariants = cva(
       // ======================================
       // Primary
       // ======================================
-      //  bg-button-primary-bg hover:bg-button-primary-bg-hover bg-button-primary-foreground hover:bg-button-primary-foreground-hover'
       {
         variant: 'primary',
         kind: 'solid',
@@ -40,7 +35,7 @@ const buttonVariants = cva(
       {
         variant: 'primary',
         kind: 'outline',
-        className: 'border border-button-primary'
+        className: `border border-button-primary`
       },
       // ======================================
       // Secondary
@@ -48,26 +43,22 @@ const buttonVariants = cva(
       {
         variant: 'secondary',
         kind: 'solid',
-        className: 'bg-button-secondary border border-button-secondary'
+        className: `bg-button-secondary 
+                    border border-button-secondary
+                    `
       },
       {
         variant: 'secondary',
         kind: 'outline',
-        className: 'border border-button-secondary'
+        className: `border border-button-secondary`
       },
       // ======================================
       // Glass
       // ======================================
-      // White/black
-      {
-        variant: 'primary',
-        kind: 'glass',
-        className: 'bg-green-500'
-      },
     ],
     defaultVariants: {
-      // variant: 'monochrome',
-      // size: 'medium'
+      variant: 'primary',
+      kind: "solid",
     }
   }
 )

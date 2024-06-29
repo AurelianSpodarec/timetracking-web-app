@@ -70,8 +70,6 @@ const themeConfig = {
 
             // Links
             //---------------
-            
-            
             "link-foreground": "var(--sidebar-link-foreground)",
             "link-foreground-hover": "var(--sidebar-link-foreground-hover)",
             "link-foreground-active": "var(--sidebar-link-foreground-active)",
