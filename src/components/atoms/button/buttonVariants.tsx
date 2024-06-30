@@ -20,6 +20,11 @@ const buttonVariants = cva(
         outline: 'bg-transparent',
         glass: 'border-transparent backdrop-blur-sm bg-opacity-60',
       },
+      size: {
+        sm: "p-button-size-sm-padding text-button-size-sm-foreground",
+        md: "p-button-size-md-padding text-button-size-md-foreground",
+        lg: "p-button-size-lg-padding text-button-size-lg-foreground",
+      }
     },
     compoundVariants: [
       // ======================================
@@ -59,6 +64,7 @@ const buttonVariants = cva(
     defaultVariants: {
       variant: 'primary',
       kind: "solid",
+      size: "md"
     }
   }
 )

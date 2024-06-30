@@ -7,18 +7,27 @@ import buttonVariants from './buttonVariants'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
+  label?: string
   asChild?: boolean
+  block?: boolean
+  size?: "sm" | "md" | "lg"
   hideTextLoading?: boolean
   isLoading?: boolean
-  label?: string
   icon?: React.ReactNode
   iconPosition?: 'left' | 'right'
-  block?: boolean
-  ring?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
-  icon, iconPosition, hideTextLoading, block, isLoading, ring, kind = 'solid', label, children, className, variant, size, asChild = false,
+  icon, iconPosition,
+  isLoading, hideTextLoading,
+  label,
+  children,
+  className,
+  asChild = false,
+  kind,
+  variant,
+  size,
+  block,
   ...props
 }, ref) => {
   const Comp = asChild ? Slot : 'button'
@@ -32,7 +41,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({
           ${!children && isLoading && !label ? '' : 'gap-2'}
           ${iconPosition === 'right' && !isLoading ? 'flex-row-reverse' : ''}
           ${block ? 'w-full' : ''}
-          ${ring ? 'ring isolate relative' : ''}
         `)
       }
       {...props}

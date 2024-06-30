@@ -112,6 +112,16 @@ const themeConfig = {
         "dashboard-sidebar-link-border-radius": "var(--border-sketchy-1)",
         "dashboard-sidebar-dropdown-menu": "var(--border-sketchy-1)"
       },
+      fontSize: {
+        'button-size-sm-foreground': "var(--button-size-sm-foreground)",
+        'button-size-md-foreground': "var(--button-size-md-foreground)",
+        'button-size-lg-foreground': "var(--button-size-lg-foreground)"
+      },
+      padding: {
+        'button-size-sm-padding': "var(--button-size-sm-padding)",
+        'button-size-md-padding': "var(--button-size-md-padding)",
+        'button-size-lg-padding': "var(--button-size-lg-padding)"
+      },
       // Animation
       // =================================================
       keyframes: {

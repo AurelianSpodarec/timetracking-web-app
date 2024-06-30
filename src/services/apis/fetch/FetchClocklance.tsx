@@ -32,10 +32,24 @@ async function FetchClocklance<T> (
 
   const content = await getResponseContent(response) as T
   const cookies = response.headers.get('Set-Cookie')
-  console.log(content, response)
+  // console.log(content, response)
 
-  if (response.ok) return { ...content, cookies }
-  throw new RequestError(response.statusText, response.status, content)
+  // return content}
+  if(!response) {
+    throw new RequestError(response.statusText, response.status, content)
+  }
+  return {...content, cookies}
+  
+  // if(!response.ok) {
+
+  // }
+
+      // if (response.ok) return { ...content, cookies }
+  // throw new RequestError(response.statusText, response.status, content)
+
+
+  // if (response.ok) return { ...content, cookies }
+  // throw new RequestError(response.statusText, response.status, content)
 }
 
 export default FetchClocklance
