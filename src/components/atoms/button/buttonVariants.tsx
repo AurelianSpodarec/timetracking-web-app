@@ -11,14 +11,14 @@ const buttonVariants = cva(
   `rounded-button-border-radius`,
   {
     variants: {
-      variant: {
-        primary: '',
-        secondary: '',
-      },
       kind: {
         solid: '',
         outline: 'bg-transparent',
         glass: 'border-transparent backdrop-blur-sm bg-opacity-60',
+      },
+      variant: {
+        primary: '',
+        secondary: '',
       },
       size: {
         sm: "p-button-size-sm-padding text-button-size-sm-foreground",
