@@ -16,23 +16,25 @@ export const theming = plugin(
         // =============================================================
         // COMPONENTS
         // =============================================================
+        // - Button
         
         // =============================================================
         // Component: Button
         // =============================================================
-        '--button-primary': "blue",
-        '--button-secondary': "red",
+        '--button-primary': "#eb6864",
+        '--button-secondary': "#aaaaaa",
         '--button-border-radius': "var(--border-sketchy-1)",
+        '--button-border-color': "#221110",
 
         // Button Sizes
         // ===================================================
         '--button-size-sm-padding': `${theme('padding.2')} ${theme('padding.4')}`,
         '--button-size-sm-foreground': theme('fontSize.sm'),
 
-        '--button-size-md-padding': `${theme('padding.3')} ${theme('padding.6')}`, //"6px 16px",
+        '--button-size-md-padding': `${theme('padding.3')} ${theme('padding.6')}`,
         '--button-size-md-foreground': theme('fontSize.md'),
 
-        '--button-size-lg-padding': `${theme('padding[3.5]')} ${theme('padding.7')}`, //"8px 22px",
+        '--button-size-lg-padding': `${theme('padding[3.5]')} ${theme('padding.7')}`,
         '--button-size-lg-foreground': theme('fontSize.lg'),
 
         // PRIMARY

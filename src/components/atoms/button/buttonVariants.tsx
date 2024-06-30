@@ -8,7 +8,7 @@ import { cva } from 'class-variance-authority'
 */
 
 const buttonVariants = cva(
-  `rounded-button-border-radius`,
+  `rounded-button-border-radius border border-button-border-color`,
   {
     variants: {
       kind: {
@@ -34,7 +34,7 @@ const buttonVariants = cva(
         variant: 'primary',
         kind: 'solid',
         className: `bg-button-primary hover:bg-button-primary/50
-                    border border-button-primary
+                    
                     `
       },
       {
@@ -49,7 +49,7 @@ const buttonVariants = cva(
         variant: 'secondary',
         kind: 'solid',
         className: `bg-button-secondary 
-                    border border-button-secondary
+                    
                     `
       },
       {

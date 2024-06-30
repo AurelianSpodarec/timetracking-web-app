@@ -93,6 +93,7 @@ const themeConfig = {
         button: {
           primary: "var(--button-primary)",
           secondary: "var(--button-secondary)",
+          "border-color": "var(--button-border-color)"
         },
         
         
