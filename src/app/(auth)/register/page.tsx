@@ -10,8 +10,9 @@ import { serverLogin } from "@/actions/loginServerAction";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/atoms/input";
 import { Button } from "@/components/atoms/button";
+import { authRegister } from "@/services/apis/endpoints/auth";
 
-function AuthLogin() {
+function AuthRegister() {
   const form = useForm<z.infer<typeof SchemaLogin>>({
     resolver: zodResolver(SchemaLogin),
     defaultValues: {
@@ -20,8 +21,12 @@ function AuthLogin() {
     }
   })
 
-  function onSubmit(values: z.infer<typeof SchemaLogin>) {
-    serverLogin(values)
+  async function onSubmit(values: z.infer<typeof SchemaLogin>) {
+    values.password_confirmation = "QWEasd123"
+    values.name = "Woop"
+    // serverLogin(values)
+    const res = await authRegister(values)
+    console.log("registerr res", res)
   }
 
   return (
@@ -65,11 +70,11 @@ function AuthLogin() {
             )}
           />
 
-          <Button type="submit">Sign In</Button>
+          <Button type="submit">Register</Button>
         </form>
       </Form>
     </div>
   )
 }
 
-export default AuthLogin;
+export default AuthRegister;

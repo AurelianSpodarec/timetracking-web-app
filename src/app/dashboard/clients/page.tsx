@@ -34,6 +34,17 @@ const clients = [
 // Change status
 // Invoices? Reports? Statistics? Earnings? Members worked? 
 
+// Have any links or such inthe client, maybe even  project
+// So prople can put their notion links htere, all in once place
+// Client contact information: 
+// client industry
+// priority
+// total developers (total project of users)
+
+// MVP
+
+
+
 function PageClients() {
   return (
     <div className="text-white">
