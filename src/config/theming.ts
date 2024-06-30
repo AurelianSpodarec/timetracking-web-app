@@ -1,5 +1,10 @@
 import plugin from 'tailwindcss/plugin'
-import themeConfig from './themeConfig'
+import themeConfig from '../lib/tailwind/themeConfig'
+
+// TODO: 
+// Root Is Theme Angonistic 
+// Light - Ligght Mode
+// Dark - Dark Mode
 
 export const theming = plugin(
   function ({ addBase, theme }) {
@@ -16,8 +21,14 @@ export const theming = plugin(
         // =============================================================
         // COMPONENTS
         // =============================================================
+        // - Input
         // - Button
         
+        // =============================================================
+        // Component: Input
+        // =============================================================
+        
+
         // =============================================================
         // Component: Button
         // =============================================================

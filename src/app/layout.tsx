@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ContextProvider from '@/context'
-import { cabinSketch, neucha } from "@/lib/fonts";
+import { cabinSketch, neucha } from "@/config/fonts";
 
 import './../styles/styles.scss'
 

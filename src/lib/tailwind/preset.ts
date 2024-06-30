@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import { theming } from './theming'
+import { theming } from '../../config/theming'
 import animatePlugin from 'tailwindcss-animate'
 
 export const preset = {
